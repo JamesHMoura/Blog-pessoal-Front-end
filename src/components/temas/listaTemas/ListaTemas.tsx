@@ -4,6 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import { buscar } from '../../../services/Service';
 import Tema from '../../../models/Tema';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 
 
@@ -18,7 +19,7 @@ function ListaTemas() {
 
     useEffect(() => {
         if(token===""){
-            alert("qual foi irmão??")
+            toastAlerta('Você precisa estar logado', 'info');
             navigate("/login")
         }
 
@@ -32,7 +33,7 @@ function ListaTemas() {
                 }
             })
         }catch(error){
-            alert("Deu ruim em!")
+            toastAlerta('O token expirou, favor logar novamente', 'info')
         }
     }
 
