@@ -1,0 +1,12 @@
+.fundoHome{
+    background-image: url(../../assets/greenhill.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    
+  }
+
+.imagem{
+    transform: rotateY(180deg);
+}
